@@ -1,0 +1,7 @@
+Monte um currículo de acordo com o padrão proposto.
+- Nome: título grande, centralizado, negrito.
+- Endereço: parágrafo, itálico.
+- Objetivo: Um parágrafo único.
+- Observe que:
+    ~ existem listas NÃO ordenadas dentro de ordenadas
+    ~ separadores verticais

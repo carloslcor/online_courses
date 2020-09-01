@@ -1,0 +1,49 @@
+	body{
+		background-color: #FFFAF0;
+		/*background-image: url("dragon ball z.jpg");*/
+
+		}	
+		.cabecalho{
+			background-color: brown;
+			height: 10%;
+			border: 5px solid pink;
+			margin: 1px;
+		}	
+		.lateral{
+			background-color: #CDC9C9;
+			float: left;
+			height: 600px;
+			width: 20%;
+			border: 5px double black;
+		}	
+		.conteudo{
+			background-color: purple;
+			float: right;
+			height: 600px;
+			width: 77%;
+			border: 5px double black;
+		}	
+		.rodape{
+			background-color: brown;
+			height: 10%;
+			border: 5px inset pink;
+			margin: 1px;
+			/*margin-top  : 100px;*/
+		}
+		h2{
+			text-align: center;
+		}
+		a{
+			color: #369874;
+		}
+		a:hover{
+			background-color: #8B8989;
+		}
+
+		h4{
+			position: absolute;
+			top: 150px;
+			left: 50px;
+		}
+
+/* Comentario */

@@ -1,0 +1,58 @@
+body{
+	background-color: yellow;
+}
+
+h2{
+	text-align: center;
+}
+
+a {
+	color: #90EE90;
+}
+
+a:hover {
+	background-color: #0AC;
+}
+
+table{
+	border: 3px solid #FAC;
+}
+
+td {
+	border: 3px double #EE0;
+}
+
+
+.cabecalho{
+	background-color: purple;
+	float: left;
+	height: 100px;
+	width: 90%;
+	border: 5px solid black;
+	background-image: url("pinguins.jpg");
+}
+
+.lateral{
+	background-color: green;
+	float: left;
+	height: 600px;
+	width: 20%;
+	border: 10px double black;
+}
+
+.conteudo{
+	background-color: pink;
+	float: left;
+	height: 600px;
+	width: 72.3%;
+	border: 10px inset black;
+	margin-left: 10px;
+}
+
+.rodape{
+	background-color: brown;
+	float: left;
+	height: 50px;
+	width: 100%;
+	border: 5px outset black;
+}
