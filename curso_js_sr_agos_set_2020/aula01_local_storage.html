@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aula 01 - Local Storage</title>
+</head>
+	<style type="text/css">
+		body{
+			text-align: left;
+		}
+		.login{
+			text-align: center;
+			margin-top: 20%;
+		}	
+		.botao{
+			text-align:center;
+			margin: auto;
+		}
+	</style>
+<body>
+	<div class="login">
+		<h3>Login</h3>
+		<input placeholder="Digite seu e-mail" id="email" type="text" name=""><br>
+		<input placeholder="Digite sua senha" id="senha" type="text" name="">	
+		<div class="botao">
+			<button onclick="salvar();">Register</button>	
+			<button>Log in</button>
+		</div>
+		<div>
+			<input type="text" placeholder="detelar um e-mail" id="ipuntDelete" name="">
+			<button type="button" onclick="deletarEmail();">Deletar</button>
+		</div>
+	</div>
+	<div>
+		<p><b><li>
+			Meus e-mails salvos:
+		</b></p>
+		<ol id="lista"></ol>
+	</div>
+	<script type="text/javascript">
+		var inputEmail = document.getElementById("email");
+		var inputSenha = document.getElementById("senha");
+		var listaDeEmails = [];
+		getLocalStorage();//Quando atualiza a tela já se chama a função
+
+
+		function salvar(){
+			if(inputEmail.value == "" || inputSenha.value == ""){	
+				alert("Campo E-mail ou Senha Vazio");
+			}
+			else{
+				setLocalStorage();
+				/*console.log("O e-mail é", inputEmail.value);
+				console.log("A senha é", inputSenha.value);*/
+
+			}
+		}
+
+		function setLocalStorage(){
+			listaDeEmails.push(inputEmail.value);
+			localStorage.setItem('emails', JSON.stringify(listaDeEmails));
+			localStorage.setItem('senha', JSON.stringify(inputSenha.value));
+			addNewLineEmail(inputEmail.value);
+			alert("Olá " + inputEmail.value + " Seu cadastro foi realizado com Seucesso");
+
+			//JSON{"PROPRIDADE1": "VALOR", "PROPRIDADE2": 25325, "PROPRIDADE3": true}
+			//JSON.stringify("")//Transforma string/texto em formato JSON apra poder armazenar no locarl storage
+		}
+		function getLocalStorage(){
+			listaDeEmails = JSON.parse(localStorage.getItem("emails")) || [];//trasforma fortato JSON em string, se tiver arrei e estiver vazio evita o erro, por isso o " || []"
+			var tamanhoArray = listaDeEmails.length;
+			for (x=0;tamanhoArray>x;x++){
+				addNewLineEmail(listaDeEmails[x]);
+			}
+
+		}
+
+		function addNewLineEmail(valor){
+			var tagLi = document.createElement("li");
+			//var tagLo = document.createElement("");
+			tagLi.appendChild(document.createTextNode(valor));
+			document.getElementById("lista").appendChild(tagLi);
+		}
+		function deletarEmail(){
+			var emailSecionado = document.getElementById("ipuntDelete").value;
+			if (emailSecionado == ""){
+				alert("Digite o E-mail");
+			}
+			var posicao = listaDeEmails.indexOf(emailSecionado); //Descobre a posição do email digitado salvo no vetor.
+			if(posicao == -1){
+				alert("E-mail não cadastro");
+			}
+			listaDeEmails.splice(posicao,1);//Apagar o email cadastrado na posição indicada
+			localStorage.setItem("emails", JSON.stringify(listaDeEmails));//Ajusta o local storage com a nova lista de emails
+			limpaLista();
+			getLocalStorage();
+		}
+		function limpaLista(){
+			const lista = document.getElementById("lista");
+			lista.innerHTML = "";//Inner é o texto HTML dentro da tag
+		}	
+
+	</script>
+</body>
+</html>

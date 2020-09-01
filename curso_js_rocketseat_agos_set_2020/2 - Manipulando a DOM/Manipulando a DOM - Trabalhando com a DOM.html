@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Trabalhando com a DOM</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="nome" class="nome"/>
+            <button class="botao">Adicionar</button>
+        </div>
+        <script>
+            //var inputElement = document.getElementById("nome");//Procura pelo elemendo com ID unico "nome"
+            //var inputElement = document.getElementsByTagName("input");//Procura pelo elemento com tag input
+               //se trata de um vetor, caso queira apenas o primeiro imput coloque assim:
+               // var inputElement = document.getElementsByTagName("input")[0];
+            //var inputElement = document.getElementsByClassName("nome")[0];//Procura pela primeira class name com o nome de " nome"
+            //var inputElement = document.querySelector("div#app input"); //procurar dentro do codigo todo por rastreio
+            var inputElement = document.querySelector("input[name=nome]"); //procurar o primeiro input que achar no cordigo, caso queira todos
+            //pode usar o document.querySelectorAll
+                console.log(inputElement);
+
+            //Usando os ventos de click dentro do script
+            var inputElement = document.querySelector("input[name=nome]");
+            var btnElement = document.querySelector("button.botao");//Procurando pelo button que tem a class botao
+            btnElement.onclick = function(){;//Retorna o valor do texto da caixa de mensagem na tela como alerta
+                var text = inputElement.value;
+                alert(text);
+            }
+
+        </script>
+    </body>
+</html>

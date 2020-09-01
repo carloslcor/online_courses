@@ -1,0 +1,93 @@
+[19:08] Carlos Rodrigues
+    completo
+​[19:09] Rebeca Veras (Convidado)
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercícios aula 5</title>
+    <meta charset="utf-8">
+</head>
+<body style="background-color: rgb(230, 206, 247);">
+<center style="color: gray; font-size: 40px; font-family: calibri; background-color: beige;">Exercícios Aula 5</center>
+<br><br>
+
+
+
+    <!--QUESTAO 1-->
+    <script type="text/javascript">
+        document.write("1) Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os números um ao lado do outro.<br>Resposta: ")
+        for (x=1 ; x<=20 ;x=x+1) {
+            document.write(x);
+        }
+    </script>
+    <br><br><br>
+    
+
+
+
+<!--QUESTAO 2-->
+    <script type="text/javascript">
+    document.write("2) Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido<br>Resposta:<br>")
+    document.write("Digite uma nota entre 0 e 10: ");
+    function a1() {
+        var nt=document.getElementById('nota');
+        if ((nt.value>10) || (nt.value<0)) {
+            alert("Digite uma número válido, ou seja, entre 0 ou 10.");
+        }
+        else alert("Sua nota foi guardada.");
+    }
+    </script>
+    <input type="text" name="" id="nota" onchange="a1();">
+    <input type="button" name="botao" value="Enviar">
+    <br><br><br>
+    
+
+
+
+<!--QUESTAO 3-->
+    <form>
+    <script type="text/javascript">
+        document.write("3) Faça um programa que calcule e mostre a média aritmética de N notas.<br>Resposta:<br>")
+
+
+        var notas=0; /* Essa variável inicia em 0 porque ela vai ser somada com os valores digitados pelo usuário ao digitar a nota, ou seja, 0+7+0+8+0+7, que vai dar 22 no final, por exemplo*/
+
+
+        var qn=prompt("Quantas notas são?"); /*Essa variavel "qn" usa um prompt para perguntar ao usuario a quantidade de notas, depois ela vai ser utilizada para a divisão, para formar a média.*/
+
+
+        for (x=1 ; x<=qn ; x++)/* Aqui esta sendo criado uma estrutura de repetição. Na casa 1, esta dizendo q o x é igual a 0, ou seja, o x inicializa em 0. Na casa 2, diz que o x precisa ser menor do que a quantidade de notas, ou seja, a quantidade de notas é maior do que 0. Na terceira casa, o programa vai fazer o teste, o X++ significa que o X vai crescer, ou seja, de 0 vai pra 1, depois pra 2 etc. X++ é o mesmo que x=x+1 */{
+        document.write("nota "+x+": <input type='text' id='n"+x+"'><br><br>")
+        /*notas=notas+1*prompt("Digite a nota"); /*Aqui ocorrerão 2 eventos ao mesmo tempo, porém só 1 será de interação. O aluno digitará as notas. A cada nota, ocorrerá a soma com 0 (que é o valor da variavel "notas"), por exemplo, 0+7+0+8. Entao o valor de "notas" vai ser a soma das notas digitadas com 0.*/
+        }
+        document.write(notas);
+
+
+            function nts(){
+                for (x=1 ; x<=qn ; x++){
+                notas=notas+1*document.getElementById("n"+x).value;    
+                }
+                document.write(notas/qn);
+            }
+        document.write("<input type='button' value='enviar' onclick='nts()'>");
+            /*document.write("Sua média é: "+notas/qn);/*Aqui, será escrito na tela a media, que é a divisao de "notas" por "qn"*/
+    </script>
+    </form>
+    
+    <script type="text/javascript">
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

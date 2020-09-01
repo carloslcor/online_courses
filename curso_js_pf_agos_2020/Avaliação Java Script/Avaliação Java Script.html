@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java Script</title>
+	<h1 style="color: red">Avaliação Java Script</h1>
+</head>
+<body>
+
+	<div><p><b>1) Crie um novo arquivo HTML e faça um script para calcular a média aritimetica de 3 notas, na exibição na página deve-se apresentar as 3 notas e informar qual a média.
+	<b></p></div>
+		<script type="text/javascript">
+			var somaNotas = 0;
+			var n1 = 0;
+			var n2 = 0;
+			var n3 = 0;
+			for(x=0;x<3;x++){
+				var nota = 1*prompt("Digite as as três notas:");
+				switch (x){
+					case 0:
+						n1 = nota;
+						console.log("n1:"+n1);
+						break;
+					case 1:
+						n2 = nota;
+						console.log("n2:"+n2);
+						break;
+					case 2:
+						n3 = nota;
+						console.log("n3:"+n3);
+						break;
+				} 	
+				somaNotas = 1*somaNotas + 1*nota;
+			}
+			somaNotas=somaNotas/3;
+			document.write("As notas são: "+n1+" ,"+n2+" e "+n3+" e a média das notas é: "+somaNotas);
+		</script>
+
+	<div><p><b>
+	2) Faça um script para saber a idade de uma pessoa, através do ano atual e ano de nascimento, na pagina em HTML deve ser mostrado o nome de uma pessoa e sua idade.</p></div>
+	
+	<script type="text/javascript">
+		/*var nome = prompt("Qual o seu nome?");
+		var anoAtual = 1*prompt("Em que anos estamos?");
+		var anoNascimento = 1*prompt("Em que ano você nasceu?");
+		var idade = 0;
+		console.log(nome);
+		console.log(anoAtual);	
+		console.log(anoNascimento);	
+		idade = anoAtual-anoNascimento;
+		console.log(idade);	
+		alert(nome+" você tem "+idade+" anos de idade ou completara ainda neste ano.");*/
+	</script>
+
+	<div><p><b>
+	3) Elaborar um programa no qual o sejam informados: o valor da compra e o valor pago. O programa deve calcular e apresentar o troco. Se o valor pago não for suficiente, deve-se emitir um aviso.</p></div>
+		<script type="text/javascript">
+			/*var valorCompra = 1*prompt("Informe o valor da sua compra:");
+			var valorPago = 1*prompt("Agora informe o valor pago");
+			var troco = 0;
+			if(valorPago<valorCompra){
+				alert("O valor pago não é suficiente.");
+			}
+			else{
+				troco= valorPago-valorCompra;
+				alert("Seu troco é de: "+troco+" Reais.");
+			}*/
+		</script>
+
+	<div><p><b>
+	4) Elaborar um programa no qual seja informado o valor de um produto em dólar e o valor da cotação do dia. O programa deve converter e apresentar o valor em reais.</p></div>
+		<script type="text/javascript">
+			/*var valorProdDolar = 1*prompt("Qual o valor do produto em dólar?");
+			var valorCompraDolar = 1*prompt("Qual a cotação do dólar hoje?");
+			var varlorProdReais = valorProdDolar*valorCompraDolar;
+			alert("O valor do produto é de "+varlorProdReais+" Reais.");*/
+		</script>
+
+	<div><p><b>
+	5) Faça um programa, com uma função que informado um número seja apresentado o caractere ‘P’, se o número for positivo, e ‘N’, se o número for zero ou negativo.</p></div>
+		<script type="text/javascript">
+			/*var num = 1*prompt("Digite um número, negativo ou positivo:");
+			if(num>=0){
+				alert("P");
+			}
+			else alert("N");*/
+		</script>
+	
+</body>
+</html>	

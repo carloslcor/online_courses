@@ -1,0 +1,83 @@
+<html>  
+    <head>
+        <title>Introdução JavaScript</title>
+    </head>
+</html>
+<body>
+    <script>
+        //console.log("Hellow Word");
+        var nome = "Carlos Rodrigues";
+        var idade = 35;
+        var peso = 92;
+        var humano = true;
+
+        var alunos = ['Carlos', 'Rafael', 'Amanda'];
+
+        var aluno = {
+            nome: "Carlos",
+            idade: 35,
+            peso: 92,
+            humano: true
+        };
+
+        var x = 10, y = 5;
+        x += 3;// equivalente a x = x+3;
+
+        function soma(numero1, numero2){// criar uma funsão no JS.
+            var resultado = numero1 + numero2;
+            return resultado;
+        }
+
+        /*function retornasexo(sexo){
+            //M = Masculino, F= Feminino
+            if(sexo == 'M'){
+                return "Masculino";
+            }
+            else if(sexo == 'F'){
+                return "Feminino";
+            }
+        }*/
+        function retornasexo(sexo){
+            //M = Masculino, F= Feminino
+            switch (sexo){
+                case "M":
+                return "Masculino";
+
+                case "F":
+                return "Feminino";
+            }
+        }
+
+        var resultadoretornasexo = retornasexo('F');
+        if(resultadoretornasexo == "Feminino"){
+            console.log("É mulher");    
+        }
+        else if(resultadoretornasexo !=="Feminino"){
+            console.log("Não é mulher");    
+        }
+        console.log(resultadoretornasexo);
+        
+        //Fazer um If e Else em uma linha, se gostar = M entao é Masculino, se nao = a Feminino.
+        var gostar = 'L';
+        var retornoTernaria = (gostar === "M") ? 'Masculino' : 'Feminino';
+        
+        console.log(retornoTernaria);
+        var resultado = soma(22,28);
+        
+
+        function exibealgo(){
+            console.log("Helow Word");  
+        }
+        //setInterval(exibealgo, 1000); // exibe de um em um segundo.
+        //setInterval(exibealgo(), 1000); // exibe so uma vez em um segundo.
+        setTimeout(exibealgo,5000) // exibe com atraso de 5S.
+
+        console.log(resultado);
+        console.log(x);
+        console.log(y);
+        console.log(aluno.idade);
+        console.log(aluno.nome);
+        console.log(aluno.peso);
+
+    </script>
+</body>  

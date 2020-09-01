@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicios</title>
+	<style type="text/css">
+		p{
+		border-width: 3px;
+		border-style: dashed;
+		border-color: gray;
+	    }
+	</style>
+	<!--<center><img src="htlm_css_js.png" style="width: 400px" height="150px"></center>-->
+		<img src="htlm_css_js.png" style="width: 200px" height="70px">
+		<a href ="https://profuturo.fortaleza.ce.gov.br/"><img src="profuturo_logo.png" style="width: 400px" height="75px"></a>
+		<img src="htlm_css_js.png" style="width: 200px" height="70px">	
+	<!-- jquery abaixo é utilizado para detectar o botão enter-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body bgcolor=#CAE1FF>
+	<div style="color: #0000CD"><b><p>
+		1) Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro.<br> Depois modifique o programa para que ele mostre os números um ao lado do outro.
+	</p></b><br></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+		<input type="text" id="meuInput" style="width: 300px">
+		<script type="text/javascript">
+			var meuInput = document.querySelector('#meuInput');
+			meuInput.value = 1;
+			var x = 1;
+			var intervalId = setInterval(function(){ 
+					//console.log("x", x);
+					x ++;
+					if(x > 20){//Quando X chegar em 20 ele parao setInterval
+						clearInterval(intervalId);
+					}
+					else meuInput.value = meuInput.value  += " "+x ;		
+		    }, 100);
+		</script>
+	<!--Resposta: facil== <script type="text/javascript">
+		    for(x=1;x<=20;x++){
+				//document.write(x+"<br>");//Um abaixo do outro
+				document.write(x+" ");//Um do lado outro
+			}
+	</script><br>-->
+
+	<div style="color: #0000CD"><b><p>
+		2) Faça um programa que peça uma nota, entre zero e dez.<br> Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido</p></b><br></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+		<script type="text/javascript">
+			document.write("Digite uma nota entre 0 e 10: ");
+			function validar_nota(){
+				var nota = document.getElementById("nota");
+				if ((nota.value>10) || (nota.value< 0)){
+					alert("Nota Invalida: "+nota.value+", digite uma nota entre 0 e 10");
+				}
+				else alert("Nota de valor "+nota.value+" salva");
+			}
+		</script><br>
+		<input type="text" id="nota" name="" onchange="validar_nota();"><br>
+
+	<div style="color: #0000CD"><b><p>
+		3) Faça um programa que calcule e mostre a média aritmética de N notas.</p></b></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+		<script type="text/javascript">
+			var n_notas_cont = 0;
+			var notas_somadas = 0;
+			function n_notas() {
+				n_notas_cont++;
+				//console.log(n_notas_cont);
+				var soma_notas = document.getElementById("input_nota_somar");
+				//console.log(soma_notas.value);
+				notas_somadas = parseFloat(notas_somadas) + parseFloat(soma_notas.value);
+				console.log(notas_somadas);
+			}
+			document.write("Digite as notas, a cada nota clique em enviar:");
+		</script><br>
+		<input type="text" id="input_nota_somar" name="" onchange="">
+		<button type="submit" onclick="n_notas(); document.getElementById('input_nota_somar').value=''">Enviar</button><br>
+		<script type="text/javascript">
+			//document.write("Valor medio das notas enviadas é: ");
+		</script>
+			<script type="text/javascript">
+				var media_notas = 0;
+				function calc_media_notas(){
+					media_notas = notas_somadas/n_notas_cont;
+					/*console.log("Soma de todas as notas é: "+notas_somadas+" Foram envidas "+n_notas_cont+" notas"+" e a Media das notas é: "+media_notas);*/
+					
+					var printMedia = document.querySelector('#input_media_notas');
+					printMedia.value = media_notas;
+
+					alert("Soma de todas as notas é: "+notas_somadas+" Foram envidas "+n_notas_cont+" notas"+" e a Media das notas é: "+media_notas);
+
+					media_notas=0;
+					notas_somadas=0;
+					n_notas_cont=0;
+
+				}
+				document.write("A media das notas é:");
+			</script><br>
+		<input type="" name="" id="input_media_notas">
+		<button type="submit" onclick="calc_media_notas();">Media</button><br>
+	
+    <div style="color: #0000CD"><b><p>
+        4) Faça um programa que leia 5 números e informe o maior número.</p></b></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+		
+		<script type="text/javascript">
+			document.write("Digite os cinco números:");
+			function maiorNumero(){
+				var n1 = document.getElementById("Nun1").value;
+				var n2 = document.getElementById("Nun2").value;
+				var n3 = document.getElementById("Nun3").value;
+				var n4 = document.getElementById("Nun4").value;
+				var n5 = document.getElementById("Nun5").value;
+
+				var max = Math.max(n1, n2, n3, n4, n5);//para exibir maior numero
+				var min = Math.min(n1, n2, n3, n4, n5);//para exibir menor numero
+				//alert(n1.value+" "+n2.value+" "+n3.value+" "+n4.value+" "+n5.value);
+				var maxNumero = document.querySelector('#maxNumero');
+					maxNumero.value = max;	
+			}
+			
+		</script><br>
+		<input style="color: #8B1A1A; width: 60px" type="text" id="Nun1" name="" value="10"><br>
+		<input style="color: #8B1A1A; width: 60px" type="text" id="Nun2" name="" value="20"><br>
+		<input style="color: #8B1A1A; width: 60px" type="text" id="Nun3" name="" value="30"><br>
+		<input style="color: #8B1A1A; width: 60px" type="text" id="Nun4" name="" value="40"><br>		
+		<input style="color: #8B1A1A; width: 60px" type="text" id="Nun5" name="" value="50"><br>
+		<input style="color: red; width: 60px" id="maxNumero" disabled=""></input>
+		<button type="submit" onclick="maiorNumero();">Exibe Maior Número</button>
+
+	<div style="color: #0000CD"><b><p>
+		5) Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.</p></b></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+
+	<script type="text/javascript">
+		function numerosPares() {
+			var numerosImpar = document.querySelector('#numerosImpar');
+			if(numerosImpar.value != ""){
+				return;
+			}//Se tiver algo na caixa onde é exibido o numeros impar, não executar novamente o código abaixo.
+			var numero = 1;		
+			//for(x=1;x<=50;x=x+2){}//Forma mais eficiente
+			for(;numero<50;numero++){
+				var resto = numero % 2;
+				if(resto == 0){
+				    //alert("par");
+				}
+				else{
+				   //alert("impar");
+				   	if(numero < 49){
+		   				var numerosImpar = document.querySelector('#numerosImpar');
+						numerosImpar.value += numero + ",";
+					}
+					else if(numero >= 49){
+		   				var numerosImpar = document.querySelector('#numerosImpar');
+						numerosImpar.value += numero + ".";	
+					}
+				}
+			}
+		}
+	</script>
+	<button type="submit" onclick="numerosPares();">Imprimir</button>
+	<input style="width: 500px" type="" name="" id="numerosImpar" disabled=""><br>
+
+	<div style="color: #0000CD"><b><p>		
+		6) Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.</p></b></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+		<script type="text/javascript">
+			document.write("Digite os dois números interios: ");
+			function gerarInt2num(){
+				var resultInt2Num = document.querySelector('#resultInt2Num');
+				if(resultInt2Num.value != ""){
+					return;
+				}
+				var menorNum = document.querySelector('#menorNum');
+				var maiorNum = document.querySelector('#maiorNum');
+				var numInt2Num = maiorNum.value - menorNum.value;
+
+				//console.log(numInt2Num);
+				for(x=parseInt(menorNum.value)+1;x<maiorNum.value;x++){
+						//console.log(x);
+					/*var resultInt2Num = document.querySelector('#resultInt2Num');
+						resultInt2Num.value ="";//limpa a caixa			*/			
+					/*if(resultInt2Num != ""){
+						console.log(resultInt2Num);
+					}*/					
+					var resultInt2Num = document.querySelector('#resultInt2Num');
+						//resultInt2Num.value ="E AE CHAPA";	
+						resultInt2Num.value += x + ",";						
+				}
+			}
+		</script><br>
+		Menor número<input style="color: #8B1A1A; width: 100px" type="" name="" value= "777" id="menorNum">
+		Maior número<input style="color: #8B1A1A; width: 100px" type="" name="" value= "785" id="maiorNum"><br>
+		<button type="submit" onclick="gerarInt2num();" value="">Gerar</button>
+		<input style="width: 500px" type="" name="" id="resultInt2Num" disabled="">
+
+		<div style="color: #0000CD"><b><p>
+		7) Altere o programa anterior para mostrar no final a soma dos números.</p></b></div>
+		<div style="color: #8B1A1A"><i>Resposta:</i></div>
+			<script type="text/javascript">
+					function soma2num(){
+					var menorNum = document.querySelector('#menorNum');
+					var maiorNum = document.querySelector('#maiorNum');
+					var soma2Num = parseInt(maiorNum.value) + parseInt(menorNum.value);
+					var resulSom2Num = document.querySelector('#soma2Num');
+						resulSom2Num.value = soma2Num;	
+					}
+			</script>				
+		<button type="submit" onclick="soma2num();">SOMAR</button>
+		<input type="text" name="" id="soma2Num" disabled="">
+	
+		<div style="color: #0000CD"><b><p>
+		8) Faça um programa que leia uma quantidade indeterminada de números positivos e conte quantos deles estão nos seguintes intervalos: [0-25], [26-50], [51-75] e [76-100]. A entrada de dados deverá terminar quando for lido um número negativo.</p></b></div>
+		<div style="color: #8B1A1A"><i>Resposta:</i></div>
+			<script type="text/javascript">
+				function quantNunInterv(){
+					var n = 1;
+					var c1 = 0;
+					var c2 = 0;
+					var c3 = 0;
+					var c4 = 0;
+					var lista1 = [];
+					var lista2 = [];
+					var lista3 = [];
+					var lista4 = [];
+					while (n > 0){
+						n = 1*prompt("Digite um número, para encerrar digite um numero negativo");
+						if ((n >= 0) && (n <= 25)){
+							lista1.push(n);
+							var span = document.getElementById('lista0_25');
+							span.innerHTML = lista1;
+							//console.log(lista1);
+							c1 = parseInt(c1) + 1;
+						}
+						else if ((n >= 26) && (n <= 50)){
+							lista2.push(n);
+							var span = document.getElementById('lista26_50');
+							span.innerHTML = lista2;
+							//console.log(lista2);
+							c2 = parseInt(c2) + 1;
+						}
+						else if ((n >= 51) && (n <= 75)){
+							lista3.push(n);
+							var span = document.getElementById('lista51_75');
+							span.innerHTML = lista3;
+							//console.log(lista3);
+							c3 = parseInt(c3) + 1;
+						}
+						else if ((n >= 76) && (n <= 100)){
+							lista4.push(n);
+							var span = document.getElementById('lista76_100');
+							span.innerHTML = lista4;
+							//console.log(lista4);
+							c4= parseInt(c4) + 1;
+						}
+						var quantNumC1 = document.querySelector('#Inp_0_25');
+						quantNumC1.value = c1;	
+
+						var quantNumC2 = document.querySelector('#Inp_26_50');
+						quantNumC2.value = c2;
+
+						var quantNumC3 = document.querySelector('#Inp_51_75');
+						quantNumC3.value = c3;
+
+						var quantNumC4 = document.querySelector('#Inp_76_100');
+						quantNumC4.value = c4;
+					}
+				}
+			</script>
+		<button type="submit" onclick="quantNunInterv();">Iniciar</button><br>
+		[0-25]<input style="width: 50px" type="" name="" disabled="" id="Inp_0_25">
+		<span id="lista0_25"></span><br>
+		[26-50]<input style="width: 50px" type="" name="" disabled="" id="Inp_26_50">
+		<span id="lista26_50"></span><br>
+		[51-75]<input style="width: 50px" type="" name="" disabled="" id="Inp_51_75">
+		<span id="lista51_75"></span><br>
+		[76-100]<input style="width: 50px" type="" name="" disabled="" id="Inp_76_100">
+		<span id="lista76_100"></span><br>
+
+		<!-- jquery abaixo é utilizado para detectar o botão enter-->
+		<script type="text/javascript">//Utilizado para detectar a tecla ENTER do teclado.
+            //Bind keypress event to textbox
+            $('#numero_notas').keypress(function(event){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    alert('Clique em enviar');  
+                }
+                //Stop the event from propogation to other handlers
+                //If this line will be removed, then keypress event handler attached 
+                //at document level will also be triggered
+                event.stopPropagation();
+            });
+            //Verifica se alguem pressinou o ENTER em qualquer momento
+            /*//Bind keypress event to document
+            $(document).keypress(function(event){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    alert('somewhere');    
+                }
+            });*/
+        </script><br>
+</body>
+</html>
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aula 05 - Java Script</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			/*
+			Autor
+			Data da ultima modifiação
+			Revisor
+			O que o script faz
+			*/
+			function textoMaiusculo(){
+				alert('Envio confirmado');
+				var use = document.getElementById("caixa");
+				alert(use.value.toUpperCase());
+			}
+		</script> 
+	</head>
+	<body>
+		<a href="#" onmouseleave="alert('Passou o mouse');" onclick="alert('Vc clicou no botão')";>Teste</a>
+		<script type="text/javascript">
+			var nome = prompt("Digite seu Nome");
+			document.write("Já sei seu nome "+nome);
+
+			for(x=1; x<10; x=x+1){// for(variavel; teste; ação)
+				document.write("<br>"+x);
+			}
+		</script>
+		<input type="text" id="caixa" onchange="textoMaiusculo();">
+	</body>
+</html>

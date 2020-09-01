@@ -1,0 +1,28 @@
+<head>
+    <style>
+        #mySpan {
+            position: absolute; 
+            left: 100px; 
+            top: 60px;
+            color: #ff0000;
+        }
+    </style>
+    <script type="text/javascript">
+        function ChangeLeft () {
+            var span = document.getElementById ("mySpan");
+            var input = document.getElementById ("myInput");
+            /*console.log(span);/*Imprime no console: <span id="mySpan" style="left: 100px;">
+        An absolute positioned span</span>*/
+            span.style.left = input.value + "px";
+            span.innerHTML="Mudar Texto do Span";
+        }
+    </script>
+</head>
+<body>
+    <span id="mySpan">
+        An absolute positioned span
+    </span>
+
+    <input id="myInput" type="text" value="100" />
+    <button onclick="ChangeLeft ();">Change the left position!</button>
+</body>

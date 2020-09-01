@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="color: #0000CD"><b><p>
+		3) Faça um programa que calcule e mostre a média aritmética de N notas.</p></b></div>
+	<div style="color: #8B1A1A"><i>Resposta:</i></div>
+	<script type="text/javascript">
+		var nota = 0;
+		var quantnotas=prompt("Quantas notas são?");
+		var resultado = 0;
+		for(x=0;x<quantnotas;x++){
+			//document.write("<br>"+x);
+			nota = (prompt("Digite a nota:"));
+			//resultado = parseInt(resultado) + parseInt(nota);	
+			resultado = resultado + 1*nota;	
+			alert(resultado);	
+		}
+		resultado = resultado / quantnotas;
+		alert("Quantidade de notas: "+quantnotas+", A média das notas é: "+resultado);
+		document.write("A média é: " + resultado);
+		resultado = 0;
+	</script>
+</body>
+</html>

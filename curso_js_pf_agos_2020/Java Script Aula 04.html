@@ -1,0 +1,33 @@
+<!DOCTYPE html><!-Versão do HTML->
+<html><!-Inicio do Documento->
+<head><!-Cabeçalho / Configurações->
+	<title>Aula Java </title><!-Titulo da Guia->
+	<meta charset="utf-8"><!-Tipo de caractere->
+
+	<script type="text/javascript">
+	//alert("Bem vindo!");
+	function ola(){
+		alert("Boa Noite!")
+	}
+	function botao_clicado(){
+		//alert("botao clicado")
+		//var nome = prompt("Qual o seu nome?");
+		var nome = document.getElementById("nome");
+		alert("Boa Noite "+nome.value)	
+	}
+	function textoUP(){
+		var usuario = nome.value.toUpperCase();
+		alert(usuario);
+	}
+
+</script>
+</head>
+<body>
+<!--<body onload="ola();"><!-O que é mostrado ao usuário-->
+<!--onload é o evento do carregamento da pagina-->
+	<a href="http://google.com" onclick="ola()">Ir ao goole</a>
+	<a href="http://google.com" onclick="textoUP()">Coverter para maiusculo</a>
+	Nome: <input type="text" id="nome" onchange="textoUP()"> 
+	<input type="button" name="botao" onclick="botao_clicado()" value="Botão">
+</body>
+</html>
